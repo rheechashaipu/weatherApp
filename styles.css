@@ -1,63 +1,51 @@
-.container{
+.wrapper{
+	height: 800px;
+	width: 800px;
 	margin: 0 auto;
-	height: 400px;
-	width: 60%;
+	outline: 2px solid black;
 }
 
-.title{
-	text-align: center;
+.flex_row{
 	display: flex;
-	flex-direction: column;
-	outline: 1px solid black;
+	
 }
 
-.title h2{
-	font-family: 'Rammetto One', cursive;
+.flex_row .col {
+	flex: 1;
+	outline: 2px solid blue;
 }
 
-.title p{
-	font-family: Helvetica;
-}
-
-.temp_location_container{
-	display: flex;
-	margin-top: 15px;
-	flex-direction: row;
-	flex-wrap: wrap;
-	height: 200px;
-	outline: 1px solid black;
-}
-
-.temperature{
+.title {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	min-width: 200px;
-	width: 50%;
-	height: 100%;
-	outline: 1px solid green;
-	background-color: gray;
-
-	font-size: 2em;
+	width: 100%;
+	background: skyblue;
+	height: 100px;
 }
 
-.icon_container{
+.flex_center{
 	display: flex;
-	align-items: center;
 	justify-content: center;
-	min-width: 200px;
-	width: 50%;
-	height: 100%;
-	outline: 1px solid red;
-	background-color: orange; 
-}
-.button_container{
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-	padding-top: 10px;
+	align-items: center;
 }
 
-.button_container button{
-	padding: 20px;
+.temp{
+	height: 300px;
 }
+
+.icon_area{
+	height: 300px;
+}
+
+
+@media (max-width: 700px) {
+	.wrapper{
+		width: 100%;
+		margin: 0;
+	}
+	.flex_row{
+		display: block;
+	}
+}
+

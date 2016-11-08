@@ -31,13 +31,23 @@ function locationResults(){
 		dataType: "json",
 		success: function(response){
 			console.log(response);
-			api_info = response;
+
+			var temp_kelvin = response.main.temp;
+			var temp_celsius = Math.round(temp_kelvin-273.15);
+			var weather_location = response.name;
+			console.log(temp_kelvin);
+			console.log(temp_celsius);
+			$(".temperature").text(temp_celsius+"°"+"Celsius");
+
+			$(".location").text(weather_location);
 		},
 		error: function(){
 			alert("We couldn't obtain weather information for your area.")
 		}
 	});
 }
+
+
 
 //weather_api is used in the url attr of our ajax req.
 

@@ -47,7 +47,7 @@ function locationResults(){
 					if(current_unit === "Celsius"){
 					$(".change_unit button").text("Farhenheit");
 					$(".temperature").text(temp_farhenheit+"° "+"F")
-					} 
+					}
 					else if(current_unit === "Farhenheit"){
 					$(".change_unit button").text("Celsius");
 					$(".temperature").text(temp_celsius+"° "+"C");

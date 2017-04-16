@@ -10,7 +10,7 @@ body {
 }
 
 .flex_row{
-	display: flex;	
+	display: flex;
 }
 
 .flex_row .col {
@@ -79,4 +79,3 @@ body {
 		height: 200px;
 	}
 }
-

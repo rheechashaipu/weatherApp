@@ -40,14 +40,35 @@ function locationResults(){
 			var weather_location = response.name;
 			var weather_desc = response.weather[0].description;
 
+			switch(weather_desc){
+				case 'clear sky': $(".icon_area").html('<i class="fa fa-sun-o" aria-hidden="true"></i>');
+				break;
+				case 'light rain':
+				case 'shower rain':
+				case 'rain':
+				case 'mist':
+				$(".icon_area").html('<i class="fa fa-tint" aria-hidden="true"></i>');
+				break;
+				case 'thunderstorm':
+				$(".icon_area").html('<i class="fa fa-bolt" aria-hidden="true"></i>');
+				break;
+				case 'snow':
+				$(".icon_area").html('<i class="fa fa-snowflake-o" aria-hidden="true"></i>');
+				break;
+				case 'few clouds':
+				case 'scattered clouds':
+				case 'broken clouds':
+				$(".icon_area").html('<i class="fa fa-cloud" aria-hidden="true"></i>');
+			}
+
 
 			$(".change_unit").click(
 				function(){
-					let current_unit = $(".change_unit button").text();
+					var current_unit = $(".change_unit button").text();
 					if(current_unit === "Celsius"){
 					$(".change_unit button").text("Farhenheit");
 					$(".temperature").text(temp_farhenheit+"° "+"F")
-					} 
+					}
 					else if(current_unit === "Farhenheit"){
 					$(".change_unit button").text("Celsius");
 					$(".temperature").text(temp_celsius+"° "+"C");
@@ -62,7 +83,7 @@ function locationResults(){
 
 		},
 		error: function(){
-			alert("We couldn't obtain weather information for your area.")
+			alert("We couldn't obtain weather information for your location.")
 		}
 	});
 }

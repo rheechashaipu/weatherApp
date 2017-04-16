@@ -23,7 +23,7 @@ function selectIcon(weather_desc){
 }
 
 function locationResults(){
-	var weather_api = "http://api.openweathermap.org/data/2.5/weather?lat="+String(location_coords[0])+"&lon="+String(location_coords[1])+"&APPID=d611f1a941d93732129e3e616b741bb7";
+	var weather_api = "https://crossorigin.me/http://api.openweathermap.org/data/2.5/weather?lat="+String(location_coords[0])+"&lon="+String(location_coords[1])+"&APPID=d611f1a941d93732129e3e616b741bb7";
 
 	console.log(weather_api);
 
